@@ -1,0 +1,190 @@
+update your main project android manifest file.
+
+Give permissions and features :
+<!-- FOR Storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- FOR Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+----------------------------------------------------------------------------
+Under the application tag :
+<provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.harmis.imagepicker.activities.GalleryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.harmis.imagepicker.activities.CropImageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/crop_image"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.harmis.imagepicker.activities.CropActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/crop_image"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+-------------------------------------------------------------------------------
+put this code into res/xml folder :(To get File path in nogut and oreo version)
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="external_files" path="."/>
+</paths>
+
+---------------------------------------------------------------------------------
+if you are using Glide then put the following code in Project level build.gradle
+allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force 'com.github.bumptech.glide:glide:4.6.1'
+        }
+    }
+}
+----------------------------------------------------------------------------------
+How to use ImagePicker
+--------------------Choose image from Gallery---------------------------------------
+Intent intent = new Intent(ImagePickActivity.this, GalleryActivity.class);
+                intent.putExtra(CommonKeyword.MAX_IMAGES, 1);
+                startActivityForResult(intent, CommonKeyword.REQUEST_CODE_GALLERY);
+
+                @Override
+                        protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+                            super.onActivityResult(requestCode, resultCode, data);
+                            if (resultCode == CommonKeyword.RESULT_CODE_GALLERY) {
+                                if (requestCode == CommonKeyword.REQUEST_CODE_GALLERY) {
+                                    List<Images> images = (List<Images>) data.getSerializableExtra(CommonKeyword.RESULT);
+                                    for (Images image : images) {
+                                        Log.e("log_tag", "Gallery : " + image.getImageUrl());
+                                    }
+                                }
+                            }
+                        }
+
+----------------------Choose image from Camera------------------------------------------
+Step 1 : Delcare CameraIntentHelper in your activity
+CameraIntentHelper mCameraIntentHelper;
+------------------------------------------------------
+Step 2 : Write down following methods in your activity
+         Invoke below method in onCreate.
+
+private void setupCameraIntentHelper() {
+        mCameraIntentHelper = new CameraIntentHelper(this, new CameraIntentHelperCallback() {
+            @Override
+            public void onPhotoUriFound(Date dateCameraIntentStarted, Uri photoUri, int rotateXDegrees) {
+                List<String> imagesList = new ArrayList<>();
+                imagesList.add(photoUri.getPath());
+
+                Intent intent = new Intent(new Intent(getApplicationContext(), CropImageActivity.class));
+                intent.putExtra(CommonKeyword.RESULT, (Serializable) imagesList);
+                startActivityForResult(intent, CommonKeyword.REQUEST_CODE_CAMERA);
+            }
+
+            @Override
+            public void deletePhotoWithUri(Uri photoUri) {
+
+            }
+
+            @Override
+            public void onSdCardNotMounted() {
+
+            }
+
+            @Override
+            public void onCanceled() {
+
+            }
+
+            @Override
+            public void onCouldNotTakePhoto() {
+
+            }
+
+            @Override
+            public void onPhotoUriNotFound() {
+
+            }
+
+            @Override
+            public void logException(Exception e) {
+                Log.e("log_tag", "log Exception : " + e.getMessage());
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        mCameraIntentHelper.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mCameraIntentHelper.onRestoreInstanceState(savedInstanceState);
+    }
+------------------------------------------------------
+Step 3 : Open camera using below method
+
+private void captureImageCamera() {
+        try {
+            if (mCameraIntentHelper != null) {
+                mCameraIntentHelper.startCameraIntent();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+------------------------------------------------------
+Step 4 : Fetch image path in onActivityResult
+
+@Override
+        protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+            mCameraIntentHelper.onActivityResult(requestCode, resultCode, data);
+            super.onActivityResult(requestCode, resultCode, data);
+            if (resultCode == CommonKeyword.RESULT_CODE_CROP_IMAGE) {
+                if (requestCode == CommonKeyword.REQUEST_CODE_CAMERA) {
+                    List<Images> images = (List<Images>) data.getSerializableExtra(CommonKeyword.RESULT);
+                    for (Images image : images) {
+                        Log.e("log_tag", "Camera : " + image.getImageUrl());
+                    }
+                }
+            }
+        }

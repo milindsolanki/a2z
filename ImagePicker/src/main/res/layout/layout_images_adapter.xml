@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frmRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <com.harmis.imagepicker.Views.SquareFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivImages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="1"
+            android:src="@drawable/ic_loading"
+            android:contentDescription="TODO" />
+    </com.harmis.imagepicker.Views.SquareFrameLayout>
+
+    <ImageView
+        android:id="@+id/ivTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:contentDescription="TODO" />
+
+    <ImageView
+        android:id="@+id/ivChecked"
+        android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_checked"
+        android:layout_gravity="right|bottom"
+        android:contentDescription="TODO" />
+</FrameLayout>
