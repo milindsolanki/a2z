@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="item"
+            type="com.a2z.deliver.models.items.ItemDetails" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_short"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_short_itemImage"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@{item.itemImage}" />
+
+        <TextView
+            android:id="@+id/tv_short_itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/color_3e3e3e"
+            app:font="@{`app_font`}"
+            android:text="@{item.itemName}"
+            android:textSize="@dimen/_15sdp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <ImageView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_dots_big" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/pickuplocation"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_10sdp"
+                app:font="@{`app_font`}"
+                android:textColor="@color/color_3e3e3e"
+                android:textSize="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_short_pickupAdd"
+                android:text="@{item.pickupAddress.fullAddress}"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:textColor="@color/color_3e3e3e"
+                app:font="@{`app_font`}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/Deliverylocation"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textColor="@color/color_3e3e3e"
+                app:font="@{`app_font`}"
+                android:layout_marginTop="@dimen/_27sdp"
+                android:textSize="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_short_deliveryAdd"
+                android:text="@{item.deliveryAddress.fullAddress}"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:maxLines="1"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:textColor="@color/color_3e3e3e"
+                app:font="@{`app_font`}"
+                android:textSize="@dimen/_15sdp"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/iv_short_map"
+                android:src="@drawable/ic_summary_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</layout>

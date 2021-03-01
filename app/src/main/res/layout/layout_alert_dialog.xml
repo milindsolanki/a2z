@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:padding="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/ic_information" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+        <TextView
+            android:id="@+id/tv_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/interestedone"
+            android:textSize="@dimen/_15sdp"
+            app:font="@{`app_font`}" />
+
+            <TextView
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:id="@+id/tv_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="fill"
+                android:text="@string/interestedtwo"
+                android:textSize="@dimen/_15sdp"
+                app:font="@{`app_font`}" />
+
+        <TextView
+            android:id="@+id/tv_third"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/interestedthree"
+            android:textSize="@dimen/_15sdp"
+            app:font="@{`app_font`}" />
+
+        <TextView
+            android:id="@+id/tv_forth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/interestedforu"
+            android:textSize="@dimen/_15sdp"
+            app:font="@{`app_font`}" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:onClick="@{clickListener::onClick}"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:font="@{`app_fontBold`}" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,292 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">A2Z</string>
+    <string name="font" tools:ignore="MissingTranslation">Fonts/Roboto-Regular.ttf</string>
+    <string name="fontBold" tools:ignore="MissingTranslation">Fonts/Roboto-Bold.ttf</string>
+
+    <!--MainScreen-->
+    <string name="signup_google">Sign up with Google</string>
+    <string name="signup_facebook">Sign up with Facebook</string>
+    <string name="signup_email">Sign up with Email</string>
+    <string name="alreadyRegistered">Already Registered?</string>
+    <string name="loginnow">Login Now</string>
+    <string name="terms">By Continuing, you agree to our Terms &amp; Conditions</string>
+    <string name="skip">Skip</string>
+    <string name="signin_msg">Signing you in...</string>
+
+    <!--Facebook Login-->
+    <string name="facebook_app_id">214252409382553</string>
+
+    <!--Google Map Api Key-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBxUnzpMN-WpOe2LfHoNgoF_Z9mYEwh8jI</string>
+
+    <!--login-->
+    <string name="login"><b>Login</b></string>
+    <string name="email">Email</string>
+    <string name="forgotpwdqustion">FORGOT PASSWORD ?</string>
+    <string name="password">Password</string>
+
+    <!--ForgotPassword-->
+    <string name="forpwd">Forgot Password</string>
+    <string name="forgotsubtitle">Enter your registered email id to receive your password. </string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!--Signup-->
+    <string name="Continue">Continue</string>
+    <string name="mobilenumber">Mobile Number</string>
+    <string name="lastname">Last Name</string>
+    <string name="firstname">First Name</string>
+    <string name="phone">Phone</string>
+    <string name="confpassword">Confirm Password</string>
+    <string name="otp">Enter OTP</string>
+    <string name="upload">Upload Image</string>
+    <string name="selectlocation">Choose Location</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+
+    <!--CommonUtil-->
+    <string name="utils__error">Something goes wrong with this app, please try again…</string>
+    <string name="utils__error_title">Error</string>
+    <string name="utils__msg_exit">Press back again to exit</string>
+    <string name="utils__exit">Exit</string>
+    <string name="utils__abort">Abort</string>
+    <string name="utils__offline">Offline</string>
+    <string name="utils__retry">Retry</string>
+    <string name="utils__no_external_storage">No external storage is available…</string>
+    <string name="utils__no_connection">No internet connection is available…</string>
+    <string name="utils__no_connection_title">Network Error</string>
+    <string name="utils__no_server">Server is not responsible…</string>
+    <string name="utils__no_server_title">Server Error</string>
+    <string name="utils__connection_timeout">Connection timeout…</string>
+    <string name="utils__connection_timeout_title">Network error</string>
+    <string name="utils__settings">Settings…</string>
+    <string name="utils__ago_sec">Second(s) Ago</string>
+    <string name="utils__ago_min">Minutes(s) Ago</string>
+    <string name="utils__ago_hour">Hour(s) Ago</string>
+    <string name="utils__ago_day">Day(s) Ago</string>
+    <string name="utils__ago_month">Month(s) Ago</string>
+    <string name="utils__ago_year">Year(s) Ago</string>
+    <string name="deliveryinprogress">Delivery in Progress</string>
+    <string name="lookingfordrivire">Looking for Driver</string>
+
+    <!--Toast-->
+    <string name="toast_email">Please enter your Email ID.</string>
+    <string name="enterfname">Please enter your first name.</string>
+    <string name="enterlname">Please enter your last name.</string>
+    <string name="entervmobno">Mobile mumber should be start with 0.</string>
+    <string name="entermobno">Please enter your mobile number.</string>
+    <string name="enter_passport_number">Please enter your MyKad number.</string>
+    <string name="enteremailid">Please enter email address.</string>
+    <string name="enteruname">Please enter user name.</string>
+    <string name="enterpassword">Please enter your password.</string>
+    <string name="enternewpassword">Please enter new password.</string>
+    <string name="entercurpassword">Please enter your current password.</string>
+    <string name="minpassword">Minimum 8 characters, including both letters and numbers only.</string>
+    <string name="entercpassword">Please enter your password again to confirm.</string>
+    <string name="validcpassword">password doesn\'t match</string>
+    <string name="validtendigit">Mobile number should have minimum 10 digits.</string>
+    <string name="validmykad">MyKad number should have 12 digits.</string>
+    <string name="validthrteendigit">Mobile number should have maximum 11 digits.</string>
+    <string name="validemail">Please enter valid email.</string>
+    <string name="success">Successful</string>
+    <string name="verify">Verify</string>
+    <string name="selectIcon">Please Select Any one Item Icon.</string>
+    <string name="picupaddress">Please Select Pick-Up address.</string>
+    <string name="deliveryaddress">Please Select Deliver address.</string>
+    <string name="itemname...">Please Insert Item Name.</string>
+    <string name="itemvalue...">Please Insert Item Price.</string>
+    <string name="uploadimage">Please Upload Image</string>
+    <string name="name_location">Please Enter Name.</string>
+    <string name="mnumber">Please Enter Mobile Number.</string>
+    <string name="email_ID">Please Enter Email_ID.</string>
+    <string name="dateandtime">Please Enter Date and Time.</string>
+    <string name="gross">Please Enter Gross Weight.</string>
+    <string name="profileupdate">Profile Updated Successfully.</string>
+    <string name="itemtypenotfound">Item Type not found</string>
+    <string name="dataloaderror">Failed to get data!</string>
+    <string name="toastedtilocation">Adding Address!</string>
+    <string name="interestedone"><b>Thank you for showing interest as a Driver.</b> </string>
+    <string name="interestedtwo">If Possbile Please Provide your information and document to get more jobs and earn more money through deliver job.</string>
+    <string name="interestedthree">Note:</string>
+    <string name="interestedforu">1) You can do price negotiation with Customer before accepting Job.</string>
+
+    <!--Home-->
+    <string name="pickyourdelivery">Pick your Delivery</string>
+    <string name="home">Home</string>
+    <string name="myDelivery">My Delivery</string>
+    <string name="mySend">My Send</string>
+    <string name="moreinfo">More Info</string>
+    <string name="more">More</string>
+
+    <!--Filter-->
+    <string name="apply">Apply</string>
+    <string name="filter">Filter</string>
+    <string name="origin">Enter Your Origin</string>
+    <string name="destination">Enter Your Destination</string>
+    <string name="category">Choose Category</string>
+    <string name="small">Small</string>
+    <string name="meduim">Medium</string>
+    <string name="large">Large</string>
+    <string name="xlarge">X-Large</string>
+    <string name="huge">Huge</string>
+    <string name="pet">Pet</string>
+    <string name="todo">TODO</string>
+
+    <!--send Something-->
+    <string name="sendSomething">Send Something</string>
+    <string name="picuplocation"><b>Pick-up location</b></string>
+    <string name="selectpicup">Select your pickup address</string>
+    <string name="deliverylocation"><b>Delivery Location</b></string>
+    <string name="Selectdelivery">Select your delivery address</string>
+    <string name="howbigyouritem"><b>How big your item?</b></string>
+    <string name="itemname">Item Name...</string>
+    <string name="itemvalue">Item Value...</string>
+    <string name="valuetext">The value is for knowing purpose only.</string>
+    <string name="grossweight"><b>Gross weight (optional)</b> </string>
+    <string name="totalWeight">Total Weight</string>
+    <string name="dimension"><b>Dimension(optional)</b></string>
+    <string name="length">Length...</string>
+    <string name="inch">inch</string>
+    <string name="width">Width...</string>
+    <string name="height">Height...</string>
+    <string name="uploadpicture">Upload picture of your item</string>
+    <string name="whowillmeet"><b>Who will meet the driver at pickup location?</b></string>
+    <string name="iwillpassmyself">I Will pass my self</string>
+    <string name="someoneelseon">Someone else on behalf of me</string>
+    <string name="name">Name</string>
+    <string name="whoisreceivi"><b>Who is receiving the delivery?</b></string>
+    <string name="iwill">I Will</string>
+    <string name="someoneelse">Someone else</string>
+    <string name="latestreceivitem"><b>Latest receiving time?</b></string>
+    <string name="dateandtimeselectfrom">Select Date and Time</string>
+    <string name="extradetails"><b>Extra Details</b></string>
+    <string name="handlewithcareoretc">Handle with care or etc...</string>
+    <string name="viewsummary"><b>View Summary</b></string>
+    <string name="emailid">Email ID</string>
+    <string name="small_text">Fits in a shoe box.</string>
+    <string name="medium_text">Fits in the front seat of a car</string>
+    <string name="large_text">Fits in the back seat of the car</string>
+    <string name="xlarge_text">Fits in a 4x4/MPV/SUV.</string>
+    <string name="huge_text">Fits in a panel van/lorry.</string>
+    <string name="pet_text">Must be in a crate and fits in the back seat.</string>
+    <string name="title_activity_home_fragment">HomeFragmentActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="update">Update</string>
+    <string name="latestpickuptime">Latest Pickup Time?</string>
+    <string name="backtest">Are you sure want to discard changes ? </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--My Delivery-->
+    <string name="ontheway">On The way</string>
+    <string name="topickup">To Pick-up</string>
+
+    <!--chooseLocation-->
+    <string name="choosepicup">Choose Pick-up Location</string>
+    <string name="choosedelivery">Choose Delivery Location</string>
+    <string name="setlocationnomap">Set location on map</string>
+    <string name="addhamo">Add Home</string>
+    <string name="addoffice">Add Office</string>
+    <string name="listingaddress">Listing Address...</string>
+    <string name="text_search">Drag the map so that the pin is on your desired location.</string>
+
+
+    <!--moreInfo-->
+    <string name="changpassword"><b>Change Password</b></string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="changpwd">Change Password</string>
+    <string name="trackdriver">Track Driver</string>
+    <string name="termsand">Terms and Condition</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="invite">Invite Friends</string>
+    <string name="logout">LogOut</string>
+    <string name="signout_msg">Are you sure you want to Signout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="updateprofile">Update Profile...</string>
+    <string name="transactionhistroy">Transaction History</string>
+
+    <!--profile-->
+    <string name="driving_licence">Driving Licence</string>
+    <string name="registration_certificate">Registration Certificate</string>
+    <string name="insurance_policy_receipt">Insurance Policy Receipt</string>
+    <string name="save">Save</string>
+    <string name="idproof">ID Proof</string>
+
+    <!--invitefriends-->
+    <string name="text_invite">
+        Spread the word! Invite your friends to download a2z Deliver app to send something today without any hassle.
+    </string>
+    <string name="sharelink">Share your invite link.</string>
+
+    <!--Change Password-->
+    <string name="newpassword">New Password</string>
+    <string name="changepassword">Change Password</string>
+    <string name="exit_msg">Are you sure you want to Exit?</string>
+
+    <!--Set Map Activity-->
+    <string name="map_drag_info_two">Please drag map to your address...</string>
+    <string name="dragmap">Drag the map so that the pin is no your desired location.</string>
+
+    <!--EditLocation-->
+    <string name="unitandfloor">Unit/Floor/Block/Building</string>
+    <string name="companyname">Company name (optional)</string>
+    <string name="editaddress">Edit Address</string>
+    <string name="add">add</string>
+    <string name="done">Done</string>
+    <string name="block">Enter Block Number.</string>
+    <string name="companyerror">Enter company Number.</string>
+
+    <!--setlocation-->
+    <string name="setlocation">Set Location</string>
+
+    <!--Summary Activity-->
+    <string name="pickuplocation">Pickup Location:</string>
+    <string name="Deliverylocation">Delivery Location:</string>
+    <string name="itemnamesample">Item name Sample</string>
+    <string name="personatpickuplocation">Person at pickup location</string>
+    <string name="personatdeliverylocation">Person at delivery location</string>
+    <string name="pickuptime">Pickup time</string>
+    <string name="deliverytime">Delivery time</string>
+    <string name="pickupcode">Pickup code</string>
+    <string name="deliverycode">Delivery code</string>
+    <string name="showcodetodriverpickup">Show this code to driver once the item pickup</string>
+    <string name="showcodetodriverdeliver">Show this code to driver once the item Deliver</string>
+    <string name="immediate">Immediate</string>
+    <string name="hidefulldetails">Hide full details</string>
+    <string name="showfulldetails">Show full details</string>
+    <string name="interested">interested ?</string>
+    <string name="iaminterested">I am interested</string>
+
+    <!--Driving licence-->
+    <string name="drivinglicence">Driving Licence</string>
+    <string name="uploading">Image Uploading...</string>
+    <string name="textdrivinglicence">Please make sure you upload a clear copy of your valid driving licence.</string>
+    <string name="edit">Edit</string>
+    <string name="userimagetost">Please Upload Front Image . </string>
+
+
+    <!--Registration Certificate-->
+    <string name="vehicleregistrationcertificate">Vehicle Registration Book</string>
+    <string name="textRegistrationcerf">Please make sure you upload a clear copy of your valid vehicle registration book.</string>
+
+    <!--Incurance Policy-->
+    <string name="incurancepolicyreceipt">Insurance Policy Receipt</string>
+    <string name="textincurancepolicy">Please make sure you upload a clear copy of your valid Incurance Policy.</string>
+
+    <!--ID Proof-->
+    <string name="textidproof">Please make sure you upload a clear copy of your valid ID Proof.</string>
+    <string name="imageupdatemsg">Image Uploading...</string>
+
+    <!--Pickup Details-->
+    <string name="routetopickup">Route to pick-up location</string>
+    <string name="delivercode">Delivery Code</string>
+    <string name="takesignature">Take Signature</string>
+    <string name="trackmyroute">Track My Route</string>
+    <string name="takeaselfie">Take a selfie of the item, together with the sender. (Optional)</string>
+    <string name="onthewaypickupcode">Enter your code here once you have reached the pick-up location</string>
+
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_editAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_ffffff"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp">
+
+                <include
+                    android:id="@+id/layoutHeader"
+                    layout="@layout/header_layout" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbar_editAddress"
+            android:layout_margin="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_editaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/editaddress"
+                    app:font="@{`app_font`}" />
+
+                <EditText
+                    android:id="@+id/et_unit_editlocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/unitandfloor"
+                    android:maxLines="1"
+                    app:font="@{`app_font`}" />
+
+                <EditText
+                    android:id="@+id/et_companyname_editlocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/companyname"
+                    android:maxLines="1"
+                    app:font="@{`app_font`}" />
+
+                <EditText
+                    android:id="@+id/et_note_editlocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="start"
+                    android:hint="@string/extradetails"
+                    android:textAlignment="textStart"
+                    app:font="@{`app_font`}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_Add_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:onClick="@{clickListener::onClick}"
+            android:text="@string/done"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:font="@{`app_font`}" />
+    </RelativeLayout>
+</layout>

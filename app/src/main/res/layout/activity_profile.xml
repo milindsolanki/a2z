@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.Profile.ProfileActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_ffffff"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStart="0dp">
+
+                    <include
+                        android:id="@+id/profileHeader"
+                        layout="@layout/header_layout" />
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_profile_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/fl_profile_pic"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_120sdp"
+                        android:onClick="@{clickListener::onClick}">
+
+                        <ImageView
+                            android:id="@+id/iv_profile_update_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/ic_placeholder_image" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_upload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@color/Black_transparent"
+                            android:drawableLeft="@drawable/ic_cam_upload"
+                            android:gravity="center"
+                            android:text="@string/upload"
+                            android:textColor="@color/white"
+                            app:font="@{`app_font`}" />
+
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toRightOf="@+id/fl_profile_pic"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_profile_update_fastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/firstname"
+                            android:maxLines="1"
+                            app:font="@{`app_font`}" />
+
+                        <EditText
+                            android:id="@+id/et_profile_update_lastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/lastname"
+                            android:maxLines="1"
+                            app:font="@{`app_font`}" />
+
+                        <EditText
+                            android:id="@+id/et_profile_update_mnumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/mobilenumber"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            app:font="@{`app_font`}" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_profile_img"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_emailid"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:gravity="center_vertical"
+                            android:text="@string/emailid"
+                            android:textSize="@dimen/_15sdp"
+                            app:font="@{`app_font`}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/color_c1c1c1" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_drivinglvc"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableRight="@drawable/ic_forward"
+                            android:gravity="center_vertical"
+                            android:onClick="@{clickListener::onClick}"
+                            android:text="@string/driving_licence"
+                            android:textSize="@dimen/_15sdp"
+                            app:font="@{`app_font`}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/color_c1c1c1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_regicrif"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableRight="@drawable/ic_forward"
+                            android:gravity="center_vertical"
+                            android:onClick="@{clickListener::onClick}"
+                            android:text="@string/registration_certificate"
+                            android:textSize="@dimen/_15sdp"
+                            app:font="@{`app_font`}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/color_c1c1c1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_insurance_policy"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableRight="@drawable/ic_forward"
+                            android:gravity="center_vertical"
+                            android:onClick="@{clickListener::onClick}"
+                            android:text="@string/insurance_policy_receipt"
+                            android:textSize="@dimen/_15sdp"
+                            app:font="@{`app_font`}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/color_c1c1c1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_update_idproof"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableRight="@drawable/ic_forward"
+                            android:gravity="center_vertical"
+                            android:onClick="@{clickListener::onClick}"
+                            android:text="@string/idproof"
+                            android:textSize="@dimen/_15sdp"
+                            app:font="@{`app_font`}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/color_c1c1c1" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_profile_update_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:onClick="@{clickListener::onClick}"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    app:font="@{`app_font`}" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
